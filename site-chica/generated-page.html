@@ -1,0 +1,433 @@
+<html lang="pt-br"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAFAEL CHICARONI - Visual Narratives</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+* {
+font-family: "Inter", sans-serif;
+}
+html {
+scroll-behavior: smooth;
+}
+@property --gradient-angle {
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+}
+.shiny-cta {
+--gradient-angle: 0deg;
+position: relative;
+overflow: hidden;
+border-radius: 9999px;
+padding: 1rem 2rem;
+font-weight: 500;
+color: #000000;
+background: linear-gradient(#fbbf24, #fbbf24) padding-box,
+conic-gradient(from var(--gradient-angle),
+transparent 0%,
+#fbbf24 10%,
+#fcd34d 20%,
+#fbbf24 30%,
+transparent 40%) border-box;
+border: 1px solid transparent;
+transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+animation: border-spin 3s linear infinite;
+}
+@keyframes border-spin {
+to {
+--gradient-angle: 360deg;
+}
+}
+.shiny-cta:hover {
+background: linear-gradient(#fcd34d, #fcd34d) padding-box,
+conic-gradient(from var(--gradient-angle),
+transparent 0%,
+#fcd34d 10%,
+#fde68a 20%,
+#fcd34d 30%,
+transparent 40%) border-box;
+transform: scale(1.05);
+}
+.fade-in {
+opacity: 0;
+transform: translateY(40px);
+transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.scale-in {
+opacity: 0;
+transform: scale(0.95);
+transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.scale-in.visible {
+opacity: 1;
+transform: scale(1);
+}
+.hero-image {
+animation: heroFade 2s ease-out forwards;
+}
+@keyframes heroFade {
+from {
+opacity: 0;
+transform: scale(1.05);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+.hero-title {
+animation: titleFade 1.5s ease-out 0.5s forwards;
+opacity: 0;
+}
+@keyframes titleFade {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+.nav-fade {
+animation: navFade 1s ease-out 0.3s forwards;
+opacity: 0;
+}
+@keyframes navFade {
+to {
+opacity: 1;
+}
+}
+.service-card:hover .service-image {
+transform: scale(1.05);
+filter: brightness(0.8);
+}
+.service-card:hover .service-glow {
+opacity: 0.4;
+}
+.work-card:hover .work-image {
+transform: scale(1.03);
+}
+.line-reveal {
+width: 0;
+transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.line-reveal.visible {
+width: 120px;
+}
+.vignette {
+box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.9);
+pointer-events: none;
+}
+</style>
+</head>
+
+<body class="overflow-x-hidden text-white bg-black selection:bg-gray-800 selection:text-white">
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-start justify-center overflow-hidden pt-[calc(33vh-200px)]">
+    <div class="vignette absolute inset-0 z-10"></div>
+    
+    <!-- Hero Image Placeholder - High End Dark Aesthetic -->
+    <div class="absolute inset-0">
+      <img src="https://i.ibb.co/N6mHnBDS/Gemini-Generated-Image-7jcnam7jcnam7jcn-1.png" alt="Rafael Chicaroni Aesthetics" class="hero-image opacity-60 w-full h-full object-cover">
+    </div>
+
+    <div class="bg-gradient-to-t from-black via-black/50 to-transparent h-64 absolute inset-x-0 bottom-0 z-10"></div>
+
+    <div class="relative z-20 text-center px-6 max-w-5xl mx-auto">
+      <h1 class="hero-title text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-[1.1] uppercase mb-6">
+        Imagens que Falam a Linguagem<br>
+        <span class="text-yellow-400">do Seu Negócio.</span>
+      </h1>
+    </div>
+
+    <div class="absolute z-20 text-center px-6 max-w-full left-1/2 -translate-x-1/2" style="top: calc(33vh + 250px); width: 1400px;">
+      <p class="nav-fade opacity-0 text-white font-light tracking-wider uppercase" style="font-size: 0.75rem;">
+        Fotografia e Vídeo Profissional<br>
+        para Pequenas Empresas<br>
+        e Empreendedores
+      </p>
+    </div>
+
+    <div class="-translate-x-1/2 nav-fade absolute bottom-12 left-1/2 z-20">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-yellow-400 animate-bounce"><path d="m6 9 6 6 6-6"></path></svg>
+    </div>
+  </section>
+
+  <!-- Identity Section (About) -->
+  <section id="about-section" class="min-h-[60vh] flex py-32 px-6 items-center justify-center bg-black">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="fade-in text-2xl md:text-4xl lg:text-5xl font-light tracking-tight leading-snug text-white">
+        Seu Negócio Merece Imagens<br>
+        <span class="text-yellow-400">que Contam a História Certa.</span>
+      </p>
+      
+      <p class="fade-in mt-8 text-lg font-light text-white leading-relaxed max-w-2xl mx-auto" style="transition-delay: 0.1s">
+        Sei que como empreendedor, você já tem muito com o que se preocupar. Produzir conteúdo visual de qualidade não deveria ser mais um peso.<br><br>
+
+        Meu trabalho é entender a essência do seu negócio e traduzir isso em imagens que realmente representam quem você é. Com olhar técnico e atenção aos detalhes, crio uma identidade visual coerente para que você possa focar no que faz de melhor.<br><br>
+
+        Cada projeto começa com uma conversa. Quero entender sua história, seus valores e o que você precisa comunicar. Depois, cuido de tudo - da produção à entrega final.
+      </p>
+
+      <div class="mt-16 flex justify-center">
+        <div class="line-reveal h-[1px] bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-70"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services-section" class="py-32 px-6 bg-black border-t border-yellow-400/20">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-in">
+        <h2 class="text-sm font-light text-yellow-400 uppercase tracking-widest">
+          Como Posso Ajudar Você
+        </h2>
+        <p class="text-white text-xl md:text-2xl font-light mt-4 md:mt-0 max-w-md text-right tracking-tight">
+            Soluções completas de fotografia e vídeo pensadas para o seu negócio crescer.
+        </p>
+      </div>
+
+      <!-- Grid layout updated for 4 services -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Service 1: Social Media (High Ticket Highlight) -->
+        <div class="service-card group cursor-pointer fade-in" onclick="window.location.href='#contact-section'">
+            <div class="flex flex-col rounded-2xl overflow-hidden border border-gray-800 group-hover:border-yellow-400 transition-all duration-700">
+              <!-- Imagem limpa no topo -->
+              <div class="relative overflow-hidden aspect-[9/16]">
+                <video autoplay muted loop playsinline class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                  <source src="Dra. saene - mulheres.pod -  video final (1).mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Card de texto abaixo -->
+              <div class="bg-gray-900 p-8">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="text-yellow-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                  </div>
+                  <h3 class="text-2xl font-medium tracking-tight text-white">Gestão Visual Mensal</h3>
+                </div>
+                <p class="text-sm text-white/80 font-light leading-relaxed">
+                  Conteúdo profissional todo mês, sem você precisar se preocupar. Fotos, vídeos e identidade visual consistente para suas redes sociais e comunicação. Mantenha sua presença ativa com qualidade.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <!-- Service 2: Interno -->
+        <div class="service-card group cursor-pointer fade-in" style="transition-delay: 0.1s" onclick="window.location.href='#contact-section'">
+            <div class="flex flex-col rounded-2xl overflow-hidden border border-gray-800 group-hover:border-yellow-400 transition-all duration-700">
+              <!-- Imagem limpa no topo -->
+              <div class="relative overflow-hidden aspect-[4/3]">
+                <img src="https://i.ibb.co/QjkscJt2/MG-7265-2.jpg" alt="Shooting Interno" class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105" style="object-position: center calc(50% + 50px);">
+              </div>
+
+              <!-- Card de texto abaixo -->
+              <div class="bg-gray-900 p-8">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div>
+                  <h3 class="text-2xl font-medium tracking-tight">Shooting Interno &amp; Business</h3>
+                </div>
+                <p class="text-sm text-white/80 font-light leading-relaxed">
+                  Mostre seu espaço, produtos e equipe com a qualidade que seu negócio merece. Imagens profissionais que transmitem credibilidade e atraem clientes.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <!-- Service 3: Externo -->
+        <div class="service-card group cursor-pointer fade-in" style="transition-delay: 0.2s" onclick="window.location.href='#contact-section'">
+            <div class="flex flex-col rounded-2xl overflow-hidden border border-gray-800 group-hover:border-yellow-400 transition-all duration-700">
+              <!-- Imagem limpa no topo -->
+              <div class="relative overflow-hidden aspect-[4/3]">
+                <img src="https://i.ibb.co/Y4Yr4VZw/MG-7160-2.jpg" alt="Shooting Externo" class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+              </div>
+
+              <!-- Card de texto abaixo -->
+              <div class="bg-gray-900 p-8">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></div>
+                  <h3 class="text-2xl font-medium tracking-tight">Shooting Externo</h3>
+                </div>
+                <p class="text-sm text-white/80 font-light leading-relaxed">
+                  Luz natural, cenários autênticos e imagens que capturam a verdadeira essência do seu trabalho. Perfeito para retratos profissionais e branding pessoal.
+                </p>
+              </div>
+            </div>
+        </div>
+
+        <!-- Service 4: Eventos -->
+        <div class="service-card group cursor-pointer fade-in" style="transition-delay: 0.3s" onclick="window.location.href='#contact-section'">
+            <div class="flex flex-col rounded-2xl overflow-hidden border border-gray-800 group-hover:border-yellow-400 transition-all duration-700">
+              <!-- Imagem limpa no topo -->
+              <div class="relative overflow-hidden aspect-[4/3]">
+                <img src="https://i.ibb.co/6RJ1Tbcc/MG-9621.jpg" alt="Eventos" class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+              </div>
+
+              <!-- Card de texto abaixo -->
+              <div class="bg-gray-900 p-8">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="text-yellow-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+                  <h3 class="text-2xl font-medium tracking-tight">Cobertura de Eventos</h3>
+                </div>
+                <p class="text-sm text-white/80 font-light leading-relaxed">
+                  Registre cada momento importante do seu evento com foto e vídeo profissional. Cobertura completa que eterniza sua celebração ou ação corporativa.
+                </p>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Works -->
+  <section id="portfolio-section" class="pt-32 pr-6 pb-32 pl-6 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-in">
+        <h2 class="text-sm font-light text-yellow-400 uppercase tracking-widest">
+          Projetos Recentes
+        </h2>
+        <a href="#contact-section" class="text-white text-sm hover:text-yellow-400 transition-colors border-b border-transparent hover:border-yellow-400 pb-1 mt-4 md:mt-0">
+            Converse comigo sobre seu projeto
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 gap-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="work-card group cursor-pointer scale-in">
+          <div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-gray-900">
+            <img src="https://i.ibb.co/GQrw8Qhb/MG-2453.jpg" alt="Hydra FootWear" class="work-image w-full h-full object-cover transition-transform duration-1000 ease-out opacity-80 group-hover:opacity-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            <div class="absolute bottom-8 left-8">
+              <p class="text-xs text-yellow-400 uppercase tracking-widest mb-2 font-medium">Shooting Externo</p>
+              <h3 class="text-2xl font-medium tracking-tight text-white">Hydra FootWear</h3>
+            </div>
+          </div>
+        </div>
+
+          <!-- Project 2 -->
+          <div class="work-card group cursor-pointer scale-in" style="transition-delay: 0.1s">
+            <div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-gray-900">
+              <img src="https://i.ibb.co/Kxjqxyfj/MG-8446-1.jpg" alt="Automotive Lifestyle" class="work-image w-full h-full object-cover transition-transform duration-1000 ease-out opacity-80 group-hover:opacity-100">
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+              <div class="absolute bottom-8 left-8">
+                <p class="text-xs text-yellow-400 uppercase tracking-widest mb-2 font-medium">Shooting Externo</p>
+                <h3 class="text-2xl font-medium tracking-tight text-white">SK Barbearia</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="work-card group cursor-pointer scale-in" style="transition-delay: 0.2s">
+            <div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-gray-900">
+              <img src="https://i.ibb.co/SD0sc3cv/MG-2821.jpg" alt="Neon" class="work-image w-full h-full object-cover transition-transform duration-1000 ease-out opacity-80 group-hover:opacity-100">
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+              <div class="absolute bottom-8 left-8">
+                <p class="text-xs text-yellow-400 uppercase tracking-widest mb-2 font-medium">Shooting Externo</p>
+                <h3 class="text-2xl font-medium tracking-tight text-white">Neon</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Contact -->
+  <section id="contact-section" class="py-48 px-6 bg-gradient-to-b from-black to-gray-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-8 fade-in text-white leading-tight">
+        Pronto para Dar o Próximo Passo<br><span class="font-medium text-yellow-400">no Seu Negócio?</span>
+      </h2>
+      <p class="text-white text-lg mb-12 fade-in max-w-xl mx-auto font-light" style="transition-delay: 0.1s">
+        Vamos conversar sobre como posso ajudar você a ter a presença visual que seu negócio merece. Solicite um orçamento sem compromisso.
+      </p>
+      
+      <div class="fade-in" style="transition-delay: 0.2s">
+        <!-- WhatsApp Button Implementation -->
+        <a href="https://api.whatsapp.com/send/?phone=5511911854818&text&type=phone_number&app_absent=0" target="_blank" class="shiny-cta text-base group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-black"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 bg-black border-t border-yellow-400/20 text-sm">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex flex-col md:flex-row items-center gap-4">
+            <p class="text-white font-light tracking-wide uppercase">© 2024 Rafael Chicaroni.</p>
+            <span class="hidden md:inline text-yellow-400">|</span>
+            <p class="text-white font-light">Fotógrafo &amp; Videomaker</p>
+        </div>
+
+        <div class="flex items-center gap-8">
+          <a href="#" class="hover:text-yellow-400 transition-colors duration-500 text-white" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="text-white hover:text-yellow-400 transition-colors duration-500" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+          if (!href || href === "#") return;
+
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(
+          ".fade-in, .scale-in, .line-reveal"
+        )
+        .forEach((el) => observer.observe(el));
+  </script>
+
+</body></html>

@@ -1,0 +1,8 @@
+# Arquivos muito grandes
+*.gif
+
+# Claude files
+.claude/
+
+# System files
+NUL
